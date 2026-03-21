@@ -1,0 +1,52 @@
+---
+// src/pages/form.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Ozvi se | otahal.me">
+  
+  <div class="min-h-[70vh] flex flex-col items-center justify-center w-full px-4">
+    
+    <div class="max-w-3xl w-full text-center">
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+        Kontaktní <span class="text-indigo-500">formulář</span>
+      </h1>
+      <p class="text-lg text-slate-400 mb-12 max-w-xl mx-auto">
+        Máte otázky nebo nabídku na stáž? Napište mi zprávu.
+      </p>
+
+      <div class="max-w-lg mx-auto w-full text-left">
+        <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl shadow-black/30">
+<form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+  
+  <input type="hidden" name="access_key" value="7bfe3d50-2274-4244-9232-6cc2497f39b0">
+
+  <div>
+    <label class="block text-sm font-medium text-slate-400 mb-2">Jméno:</label>
+    <input type="text" name="name" required class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors" placeholder="Jan Novák" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-slate-400 mb-2">Váš E-Mail:</label>
+    <input type="email" name="email" required class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors" placeholder="jan@novak.cz" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-slate-400 mb-2">Zpráva:</label>
+    <textarea name="message" required rows="4" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors resize-none" placeholder="Ahoj, měl bych zájem o..."></textarea>
+  </div>
+
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-500 transition-colors">
+    Odeslat zprávu
+  </button>
+  
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</MainLayout>

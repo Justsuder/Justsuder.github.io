@@ -1,0 +1,64 @@
+---
+// src/components/Header.astro
+const navItems = [
+  { name: 'O mně', href: '/' },
+  { name: 'Projekty', href: '/projects' },
+  { name: 'Certifikáty', href: '/certificates' },
+  { name: 'Kontakty', href: '/contacts' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      
+      <a href="/" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors">
+        otahal<span class="text-indigo-500">.me</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-x-8">
+        {navItems.map(item => (
+          <a href={item.href} class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">
+            {item.name}
+          </a>
+        ))}
+        <a href="/form" class="text-sm font-medium bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/20">
+          Ozvi se
+        </a>
+      </div>
+
+      <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-800">
+      <div class="flex flex-col gap-y-3 pt-4">
+        {navItems.map(item => (
+          <a href={item.href} class="text-base font-medium text-slate-300 hover:text-indigo-400 transition-colors block px-2 py-1.5 rounded-md hover:bg-gray-900">
+            {item.name}
+          </a>
+        ))}
+        
+        <a href="/form" class="mt-2 text-center text-base font-medium bg-indigo-600 text-white px-4 py-3 rounded-lg hover:bg-indigo-500 transition-colors shadow-lg shadow-indigo-500/20">
+          Ozvi se
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Klientský JavaScript pro ovládání burgru
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
