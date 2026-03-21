@@ -14,18 +14,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout kód
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+        
+      - name: Nastavení Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Instalace balíčků
+        run: npm install
+        
+      - name: Sestavení webu (Build)
+        run: npm run build
+        
+      - name: Nahrání hotového webu
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Nasazení na Pages
         id: deployment
         uses: actions/deploy-pages@v4
