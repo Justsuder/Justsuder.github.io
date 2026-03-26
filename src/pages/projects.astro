@@ -10,21 +10,45 @@ import MainLayout from '../layouts/MainLayout.astro';
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
+      <!--zacatek div projektu -->
+
       <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-indigo-500 transition-colors group">
         <div class="w-full h-48 bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-slate-500 group-hover:bg-gray-700 transition-colors">
-          Náhled projektu
+        <img
+        src="/adguard.png"
+         alt="adguard"
+        class="relative w-full h-full object-cover rounded-md shadow-2xl bg-gray-900"
+        >
         </div>
-        <h3 class="text-xl font-bold text-white mb-2">První školní projekt</h3>
+        <h3 class="text-xl font-bold text-white mb-2">Domácí server & Síťový AdBlock</h3>
         <p class="text-slate-400 mb-4 text-sm">
-          Aplikace vytvořená v rámci předmětu na VŠB. Slouží k evidenci věcí a je naprogramovaná v čistém JS.
+        Přeměna staršího notebooku na domácí server běžící na Ubuntu Serveru. 
+        Nasazení DNS serveru (AdGuard Home) pro plošné blokování reklam a telemetrie 
+        na úrovni celé lokální sítě. Řešeno bylo i uvolňování systémových portů a správa napájení pro běh headless serveru.
         </p>
         <div class="flex gap-2">
-          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">HTML/CSS</span>
-          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">JavaScript</span>
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">DNS</span>
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">AdGuard</span>
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">Ubuntu Server Terminal</span>
         </div>
       </div>
 
+      <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-indigo-500 transition-colors group">
+        <div class="w-full h-48 bg-gray-800 rounded-lg mb-4 flex items-center justify-center text-slate-500 group-hover:bg-gray-700 transition-colors">
+         <span class="text-indigo-500 font-bold text-3xl group-hover:scale-110 transition-transform duration-300">otahal.me</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Moje webová stránka/portfolio</h3>
+        <p class="text-slate-400 mb-4 text-sm">
+          Responzivní web, vytvořeno přes framwork Astro, stylováno přes Tailwind.
+          Formulář přes Web3Forms a automatizované CI/CD nasazení pomocí GitHub Actions na vlastní doménu.
+        </p>
+        <div class="flex gap-2">
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">Astro</span>
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">Tailwind CSS</span>
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-medium">Git & CI/CD</span>
+        </div>
+      </div>
+<!--konec div projektu -->
     </div>
   </div>
 </MainLayout>
