@@ -3,7 +3,7 @@
 import Header from '../components/Header.astro';
 import '../styles/global.css';
 // Přebíráme název stránky jako "prop" (vlastnost)
-const { title = "Moje Portfolio | otahal.me" } = Astro.props;
+const { title = "Moje Portfolio | otahal.me", hideNav = false } = Astro.props;
 ---
 
 <html lang="cs">
@@ -16,7 +16,7 @@ const { title = "Moje Portfolio | otahal.me" } = Astro.props;
   
   <body class="bg-gray-950 text-slate-200 min-h-screen flex flex-col font-sans">
     
-    <Header />
+    {!hideNav && <Header />}
 
     <main class="flex-grow container mx-auto px-6 py-12 md:py-20">
       <slot />
